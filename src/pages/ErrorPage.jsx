@@ -1,14 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
+import Navbar from '../assets/components/Navbar';
 
 
-const ErrorPage = ({status = "4004", message = "Page Not Found"}) => {
+const ErrorPage = ({status = "404", message = "Page Not Found"}) => {
     const Navigate = useNavigate();
     return (
         <div>
             <header className='bg-base-200 lg:mb-48 shadow-sm sticky-top'>
                 <div className='container mx-auto'>
-                    Header Navbar
+                    <Navbar />
                 </div>
             </header>
             <main className='h-full bg-danger'>

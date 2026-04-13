@@ -6,9 +6,9 @@ import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? "bg-green-700 text-base-200":""}`} ><IoHomeOutline size={16} /> Home</NavLink></li>
-        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-700 text-base-200":""}`} to={'/timeline'} ><IoMdTime size={16} /> Timeline</NavLink></li>
-        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-700 text-base-200":""}`} to={'/stats'} ><ImStatsDots size={16} /> Stats</NavLink></li>
+        <li><NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} ><IoHomeOutline size={16} /> Home</NavLink></li>
+        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} to={'/timeline'} ><IoMdTime size={16} /> Timeline</NavLink></li>
+        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} to={'/stats'} ><ImStatsDots size={16} /> Stats</NavLink></li>
     </>
 
     return (
@@ -20,7 +20,7 @@ const Navbar = () => {
                     <label htmlFor="navbar-1-toggle" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <h2 className="text-2xl font-bold"><Link to={'/'}>KeenKeeper</Link></h2>
+                    <h2 className="text-2xl text-green-900 font-bold"><Link to={'/'}>KeenKeeper</Link></h2>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-5">

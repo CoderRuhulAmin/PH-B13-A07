@@ -12,9 +12,7 @@ const Home = () => {
                 </div>
             </header>
             <main className='h-full bg-danger'>
-                <div className='container mx-auto px-4 py-12'>
-                    <Outlet />
-                </div>
+                <Outlet />
             </main>
             <footer className="bg-green-900 text-base-200">
                 <div className="container mx-auto px-4 py-12">

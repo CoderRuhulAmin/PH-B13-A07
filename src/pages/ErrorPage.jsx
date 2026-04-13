@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
-import Navbar from '../assets/components/Navbar';
-import Footer from '../assets/components/Footer';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 
 const ErrorPage = ({status = "404", message = "Page Not Found"}) => {

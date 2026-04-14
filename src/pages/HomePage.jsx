@@ -4,11 +4,17 @@ import FriendList from '../components/FriendList';
 
 const HomePage = () => {
     return (
-        <main className='h-full bg-danger py-12'>
+        <>
             <Banner />
-            <div className='border-t border-black/20'></div>
+            <section className='px-4'>
+                <div className='container mx-auto'>
+
+                    <div className='border-t border-black/20'></div>
+
+                </div>
+            </section>
             <FriendList />
-        </main>
+        </>
     );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-const FriendCard = ({friend}) => {
-    // console.log(friend, "FriendCard");
+const FriendDetailsCard = ({friend}) => {
+
+    console.log(friend);
 
     return (
-        <Link to={`/friend/${friend.id}`} className="card bg-base-100 p-6 shadow-sm">
+        <div className="card bg-base-100 p-6 shadow-sm">
             <figure className="mb-3">
                 <img
                     src={friend.picture}
@@ -40,9 +40,13 @@ const FriendCard = ({friend}) => {
                             }
                     </div>
                 </div>
+                <div>
+                    <p className='text-[16px] italic text-gray-500 font-medium'>"{friend.bio}"</p>
+                    <p className='text-gray-500'>{friend.email}</p>
+                </div>
             </div>
-        </Link>
+        </div>
     );
 };
 
-export default FriendCard;
+export default FriendDetailsCard;

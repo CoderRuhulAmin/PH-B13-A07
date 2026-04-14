@@ -43,15 +43,15 @@ const FriendList = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex justify-center w-full py-10">
-                    {
-                        
-                        loading && (
-                            <span className="loading loading-spinner loading-lg text-success "></span>
-                        )
+                {
 
-                    }
-                </div>
+                    loading && (
+                        <div className="flex justify-center w-full py-10">
+                            <span className="loading loading-spinner loading-lg text-success "></span>
+                        </div>
+                    )
+
+                }
                 <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                     {
                         filteredFriends.map(friend => <FriendCard key={friend.id} friend={friend} />)

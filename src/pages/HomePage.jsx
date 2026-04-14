@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import Banner from '../components/Banner';
 import FriendList from '../components/FriendList';
 
 const HomePage = () => {
     return (
-        <main className='h-full bg-danger'>
+        <main className='h-full bg-danger py-12'>
             <Banner />
             <div className='border-t border-black/20'></div>
             <FriendList />

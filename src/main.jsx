@@ -5,12 +5,17 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router'
 import { router } from './routes/Routes.jsx'
 import { ToastContainer } from 'react-toastify'
+import FriendProvider from './context/FriendProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 
-		<RouterProvider router={router} />
-		<ToastContainer />
+		<FriendProvider>
+
+			<RouterProvider router={router} />
+			<ToastContainer />
+
+		</FriendProvider>
 
 	</StrictMode>,
 )

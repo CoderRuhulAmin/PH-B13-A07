@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaPlus } from 'react-icons/fa';
+import { FriendContext } from '../context/FriendContext';
 
 const Banner = () => {
+    const { friends } = useContext(FriendContext);
+
+    const filteredOnTrackFriends = friends.filter(friend => friend.status === 'on-track');
+    // console.log(filteredOnTrackFriends);
     return (
         <section className='px-4 py-12'>
             <div className='container mx-auto'>
@@ -13,13 +18,13 @@ const Banner = () => {
                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                         <div className="card bg-base-100 shadow-sm">
                             <div className="card-body">
-                                <h2 className="text-3xl font-bold">10</h2>
+                                <h2 className="text-3xl font-bold">{friends.length}</h2>
                                 <p>Total Friends</p>
                             </div>
                         </div>
                         <div className="card bg-base-100 shadow-sm">
                             <div className="card-body">
-                                <h2 className="text-3xl font-bold">03</h2>
+                                <h2 className="text-3xl font-bold">{filteredOnTrackFriends.length}</h2>
                                 <p>On Track</p>
                             </div>
                         </div>

@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 
 const Home = () => {
     return (
-        <wrapper>
+        <div>
             <header className='bg-base-200 shadow-sm sticky top-0 z-50'>
                 <div className='container mx-auto'>
                     <Navbar />
@@ -17,7 +17,7 @@ const Home = () => {
                     <Footer />
                 </div>
             </footer>
-        </wrapper>
+        </div>
     );
 };
 

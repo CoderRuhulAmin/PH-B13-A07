@@ -2,9 +2,9 @@ import React from 'react';
 
 const TimeLine = () => {
     return (
-        <div>
+        <main className='h-dvh bg-danger'>
             Timeline Page 
-        </div>
+        </main>
     );
 };
 

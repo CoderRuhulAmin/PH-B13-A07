@@ -2,9 +2,9 @@ import React from 'react';
 
 const Stats = () => {
     return (
-        <div>
+        <main className='h-dvh bg-danger'>
             Stats Page
-        </div>
+        </main>
     );
 };
 

@@ -1,14 +1,32 @@
 import React from 'react';
 import { ImStatsDots } from 'react-icons/im';
 import { IoMdTime } from 'react-icons/io';
-import { IoHomeOutline, IoHomeSharp, IoTime } from 'react-icons/io5';
+import { IoHomeOutline } from 'react-icons/io5';
 import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
     const links = <>
-        <li><NavLink to={'/'} className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} ><IoHomeOutline size={16} /> Home</NavLink></li>
-        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} to={'/timeline'} ><IoMdTime size={16} /> Timeline</NavLink></li>
-        <li><NavLink className={({isActive})=>`font-semibold ${isActive ? "bg-green-900 text-base-200":""}`} to={'/stats'} ><ImStatsDots size={16} /> Stats</NavLink></li>
+        <li>
+            <NavLink 
+                to={'/'} 
+                className={({ isActive }) => `flex items-center gap-2 font-semibold px-3 py-2 rounded-md transition ${ isActive ? "bg-green-900 text-base-200" : "hover:bg-green-100"}`} >
+                <IoHomeOutline size={16} /> Home
+            </NavLink>
+        </li>
+        <li>
+            <NavLink 
+                to={'/timeline'} 
+                className={({ isActive }) => `flex items-center gap-2 font-semibold px-3 py-2 rounded-md transition ${ isActive ? "bg-green-900 text-base-200" : "hover:bg-green-100"}`} >
+                <IoMdTime size={16} /> Timeline
+            </NavLink>
+        </li>
+        <li>
+            <NavLink 
+                to={'/stats'} 
+                className={({ isActive }) => `flex items-center gap-2 font-semibold px-3 py-2 rounded-md transition ${ isActive ? "bg-green-900 text-base-200" : "hover:bg-green-100"}`} >
+                <ImStatsDots size={16} /> Stats
+            </NavLink>
+        </li>
     </>
 
     return (
@@ -29,7 +47,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className="collapse-content lg:hidden z-1">
+            <div className="collapse-content lg:hidden z-10">
                 <ul className="menu">
                     {links}
                 </ul>

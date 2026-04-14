@@ -4,11 +4,11 @@ import FriendList from '../components/FriendList';
 
 const HomePage = () => {
     return (
-        <div>
+        <main className='h-full bg-danger'>
             <Banner />
             <div className='border-t border-black/20'></div>
             <FriendList />
-        </div>
+        </main>
     );
 };
 

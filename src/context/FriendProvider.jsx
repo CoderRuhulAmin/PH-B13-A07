@@ -5,6 +5,8 @@ const FriendProvider = ({ children }) => {
     const [friends, setFriends] = useState([]);
     const [loading, setLoading] = useState(true);
     const [statusFilter, setStatusFilter] = useState('all');
+    const [interactions, setInteractions] = useState([]);
+    const [filter, setFilter] = useState("all");
 
     useEffect(() => {
         fetch('/data/friendsData.json')
@@ -23,12 +25,49 @@ const FriendProvider = ({ children }) => {
         ? friends
         : friends.filter(friend => friend.status === statusFilter);
 
+    const handleInteractions = (friend, type) => {
+        // console.log(interactions);
+        const newId = interactions.length + 1;
+        const newInteraction = {
+            id: newId,
+            friend: friend,
+            type: type,
+            title: type.charAt(0).toUpperCase() + type.slice(1),
+            description:
+                type === "call"
+                    ? "Quick call check-in"
+                    : type === "text"
+                        ? "Sent a message"
+                        : "Started a video chat",
+            date: new Date().toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+            }),
+        }
+
+        setInteractions([newInteraction, ...interactions]);
+        // console.log(interactions);
+    }
+
+    const filteredInteractions =
+        filter === "all"
+            ? interactions
+            : interactions.filter((item) => item.type === filter);
+
     const data = {
         friends,
         filteredFriends,
         loading,
         statusFilter,
-        handleFilterChange
+        handleFilterChange,
+        interactions: filteredInteractions,
+        setInteractions,
+        handleInteractions,
+        filter, 
+        setFilter
     }
 
     return (

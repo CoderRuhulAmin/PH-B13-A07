@@ -2,7 +2,7 @@ import React from 'react';
 
 const FriendDetailsCard = ({friend}) => {
 
-    console.log(friend);
+    // console.log(friend);
 
     return (
         <div className="card bg-base-100 p-6 shadow-sm">

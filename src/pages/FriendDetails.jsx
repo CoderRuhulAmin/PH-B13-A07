@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import FriendDetailsCard from '../ui/FriendDetailsCard';
 import FriendCard from '../ui/FriendCard';
@@ -10,6 +10,7 @@ import { BiPhoneCall } from 'react-icons/bi';
 import { MdHistory, MdOutlineTextsms } from 'react-icons/md';
 import { GoDeviceCameraVideo } from 'react-icons/go';
 import RecentInteractions from '../components/RecentInteractions';
+import { FriendContext } from '../context/FriendContext';
 
 const FriendDetails = () => {
     const { id } = useParams();
@@ -20,6 +21,7 @@ const FriendDetails = () => {
 
     const expectedFriend = friends.find((friend) => friend.id === Number(id));
 
+    const {handleInteractions} = useContext(FriendContext);
 
     return (
         <section className='px-4 py-12'>
@@ -92,18 +94,21 @@ const FriendDetails = () => {
                                 <div className="flex flex-wrap justify-start items-center gap-5">
 
                                     <button
+                                        onClick={()=>handleInteractions(expectedFriend, "call")}
                                         className="flex-1 min-w-30 bg-green-100 text-green-700 p-4 rounded-xl flex flex-col items-center justify-center text-lg hover:bg-green-200 transition active:scale-95 cursor-pointer">
                                         <BiPhoneCall size={32} className="mb-2" />
                                         <span>Call</span>
                                     </button>
 
                                     <button
+                                        onClick={()=>handleInteractions(expectedFriend, "text")}
                                         className="flex-1 min-w-30 bg-blue-100 text-blue-700 p-4 rounded-xl flex flex-col items-center justify-center text-lg hover:bg-blue-200 transition active:scale-95 cursor-pointer">
                                         <MdOutlineTextsms size={32} className="mb-2" />
                                         <span>Text</span>
                                     </button>
 
                                     <button
+                                        onClick={()=>handleInteractions(expectedFriend, "video")}
                                         className="flex-1 min-w-30 bg-purple-100 text-purple-700 p-4 rounded-xl flex flex-col items-center justify-center text-lg hover:bg-purple-200 transition active:scale-95 cursor-pointer">
                                         <GoDeviceCameraVideo size={32} className="mb-2" />
                                         <span>Video</span>

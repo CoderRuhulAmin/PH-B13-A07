@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FriendContext } from "./FriendContext";
+import { toast } from "react-toastify";
 
 const FriendProvider = ({ children }) => {
     const [friends, setFriends] = useState([]);
@@ -50,6 +51,7 @@ const FriendProvider = ({ children }) => {
 
         setInteractions([newInteraction, ...interactions]);
         // console.log(interactions);
+        toast.success(`${newInteraction.title} with ${friend.name}.`)
     }
 
     const filteredInteractions =

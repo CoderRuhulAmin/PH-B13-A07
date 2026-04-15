@@ -1,16 +1,45 @@
-# React + Vite
+# 👥 KeenKeeper — Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KeenKeeper is a responsive React app for managing friendships, tracking contact history, and analyzing interactions like calls, texts, and video chats.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+- Live Link: https://ph-b13-a07.netlify.app/
+- GitHub Repo: https://github.com/CoderRuhulAmin/PH-B13-A07
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🏠 Home page with navbar, banner, and friend list
+- 👥 Friends loaded from JSON data
+- 👤 Friend details page with quick actions (Call, Text, Video)
+- ⚡ Timeline page to track all interactions
+- 🔍 Filter timeline by interaction type
+- 📊 Stats page with Pie Chart (Recharts)
+- 🔔 Toast notifications on interactions
+- 📱 Fully responsive design
+- ❌ 404 page for invalid routes
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tech Stack
+
+- React.js
+- React Router DOM
+- Tailwind CSS
+- daisyUI
+- Recharts
+- React Toastify
+- React Icons
+
+---
+
+## ⚙️ Setup
+
+```bash
+git clone https://github.com/your-username/keenkeeper.git
+cd keenkeeper
+npm install
+npm run dev

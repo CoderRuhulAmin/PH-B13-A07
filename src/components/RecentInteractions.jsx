@@ -3,11 +3,12 @@ import InteractionCard from '../ui/InteractionCard';
 import { useContext } from 'react';
 import { FriendContext } from '../context/FriendContext';
 import { Link } from 'react-router';
+import NoInteractionHistory from '../ui/NoInteractionHistory';
 
 
 const RecentInteractions = () => {
 
-    const {interactions} = useContext(FriendContext)
+    const { interactions } = useContext(FriendContext)
     // console.log(interactions)
 
     const limitedInteractions = interactions.slice(0, 5);
@@ -24,9 +25,15 @@ const RecentInteractions = () => {
             </div>
 
             <div className="space-y-4">
-                {limitedInteractions.map((item) => (
-                    <InteractionCard key={item.id} item={item} />
-                ))}
+                {
+                    interactions.length === 0 ? (
+                        <NoInteractionHistory />
+                    ) : (
+                        limitedInteractions.map((item) => (
+                            <InteractionCard key={item.id} item={item} />
+                        ))
+                    )
+                }
             </div>
         </div>
     );

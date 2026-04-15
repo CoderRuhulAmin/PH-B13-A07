@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { FriendContext } from '../context/FriendContext';
 import InteractionCard from '../ui/InteractionCard';
+import NoInteractionHistory from '../ui/NoInteractionHistory';
 
 const TimeLine = () => {
 
@@ -29,9 +30,15 @@ const TimeLine = () => {
                     </div>
 
                     <div className="space-y-5 max-h-150 overflow-y-auto pr-2">
-                        {interactions.map((item) => (
-                            <InteractionCard key={item.id} item={item} />
-                        ))}
+                        {
+                            interactions.length === 0 ? (
+                                <NoInteractionHistory />
+                            ) : (
+                                interactions.map((item) => (
+                                    <InteractionCard key={item.id} item={item} />
+                                ))
+                            )
+                        }
                     </div>
                 </div>
             </div>
